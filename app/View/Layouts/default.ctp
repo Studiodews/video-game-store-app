@@ -16,6 +16,12 @@
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+	
+	<script type="text/javascript">
+	window.onload = function() {
+		
+	}
+	</script>
 </head>
 <body>
 
@@ -23,7 +29,6 @@
 		<div id="header">
 			<h1>Game Addict</h1>
 			<nav id="nav_bar">
-			
 				
 				<?php
 					echo $this->Html->link(
