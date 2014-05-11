@@ -27,7 +27,7 @@
 
 	<div id="container">
 		<div id="header">
-			<h1>Game Addict</h1>
+			<div id="logo"><h1>Game Addict</h1></div>
 			<nav id="nav_bar">
 				
 				<?php

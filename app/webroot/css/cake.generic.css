@@ -23,11 +23,15 @@
 
 /** General Style Info **/
 body {
-	background: #202020;
+	background: 	#FFFFFF;
 	color: #fff;
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
 	font-size:90%;
 	margin: 0;
+}
+
+div#logo, div#logo h1 {
+	color: black;
 }
 a {
 	color: #003d4c;
@@ -105,6 +109,12 @@ p {
 	color: #333;
 	padding: 10px 20px 40px 20px;
 	overflow: auto;
+	border: solid 1px black;
+}
+
+#content h1 {
+	margin-left: 50px;
+	
 }
 #footer {
 	clear: both;
@@ -304,6 +314,7 @@ form .required label:after {
 	content: '*';
 	display:inline;
 }
+
 form div.submit {
 	border: 0;
 	clear: both;

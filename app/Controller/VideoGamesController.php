@@ -5,9 +5,14 @@ class VideoGamesController extends AppController {
 	public $uses = array('Platform', 'VideoGame');
 
 	public function index() {
-		$this->set("video_game", "super mario 3d land");
-		$this->set("card", "pokemon");
-		$this->set('video_games', $this->VideoGame->find('all'));
+		if (isset($_GET['Category']))
+		{
+			$this->set('video_games', $this->VideoGame->find('all', array('conditions' =>array('VideoGame.platform_id'=>$_GET['Category']))));
+			
+		}
+		else {
+			$this->set('video_games', $this->VideoGame->find('all'));
+		}
 		$this->set('platforms',$this->Platform->find('all'));
 		
 	}
@@ -25,6 +30,12 @@ class VideoGamesController extends AppController {
 				$this->Session->setFlash(__('Unable to add your post'));
 		}	
 		$this->set('platforms', $this->Platform->find('all'));
+	}
+	
+	public function view($id = null) {
+		if ($id != null) {
+			$this->set('video_game', $this->VideoGame->findById($id));
+		}
 	}
 }
 ?>

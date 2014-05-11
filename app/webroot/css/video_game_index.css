@@ -1,0 +1,21 @@
+body {
+background:#FFFFFF;
+}
+
+form {
+margin:0px;
+padding: 0px;
+}
+form .select, form .select label {
+	float: left;
+	display: inline;
+	clear: none;
+}
+form .submit, form .submit > input {
+vertical-align:top;
+clear:none;
+display:inline;
+margin:0px;
+padding: 0px;
+
+}

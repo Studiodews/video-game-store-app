@@ -5,6 +5,7 @@ class ConsolesController extends AppController {
 	public $uses = array('Platform', 'Console');
 	
 	public function index() {
+		$this->set('platforms', $this->Platform->find('all'));
 		$this->set('consoles', $this->Console->find('all'));
 	}
 	

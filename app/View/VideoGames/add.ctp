@@ -3,7 +3,6 @@
 <?php
 echo $this->Form->create('VideoGame', array('action' => 'add'));
 echo $this->Form->input('VideoGame.title');
-echo $this->Form->input('VideoGame.rating');
 echo $this->Form->input('VideoGame.price');
 echo $this->Form->body('VideoGame.description', array('rows'=>'3', 'label' =>'description'));
 
