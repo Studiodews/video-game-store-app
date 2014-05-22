@@ -1,11 +1,14 @@
 Author: Paul Rodriguez
+
 Date Created: 5/6/2014
+
 Last Updated: 5/6/2014
 
 This is a video game store application that I am doing as a project for fun and to see the capabilities of cakePHP.
 
 I will explain what the store is about later.
 
+I do not own all the images that I use for the items.
 
 
 

@@ -1,7 +1,13 @@
-<h1>Add new Video Game</h1>
+<h1>Edit Video Game: <?php echo $this->request->data['VideoGame']['title']?></h1>
 
 <?php
-echo $this->Form->create('VideoGame', array('action' => 'add'));
+/*
+echo $this->request->data['VideoGame']['title'];
+echo $this->request->data['VideoGame']['price'];
+echo $this->request->data['VideoGame']['description'];
+*/
+echo $this->Form->create('VideoGame');
+echo $this->Form->input("id", array("type"=>"hidden"));
 echo $this->Form->input('VideoGame.title');
 echo $this->Form->input('VideoGame.price');
 echo $this->Form->input('VideoGame.main_image_url');
@@ -16,7 +22,7 @@ foreach ($platforms as $platform)
 
 echo $this->Form->input(
     'VideoGame.platform_id',
-    array('options' => $select_platform)
+    array('options' => $select_platform, 'selected' => $this->request->data['VideoGame']['platform_id'])
 );
 
 echo $this->Form->end('Save Game');

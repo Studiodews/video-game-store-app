@@ -20,6 +20,10 @@ class VideoGame extends AppModel {
 		
 		'platform_id' => array(
 			'rule' => array('notEmpty', true, 'numeric', true)
+		),
+		
+		'main_image_url' => array(
+			'rule' => 'notEmpty'
 		)
 	);
 }

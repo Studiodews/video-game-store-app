@@ -19,6 +19,9 @@ class Console extends AppModel {
 		),
 		'platform_id' => array (
 			'rule' => 'numeric'
+		),
+		'main_image_url' => array(
+			'rule' => 'notEmpty'
 		)
 		
 	);
