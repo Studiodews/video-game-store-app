@@ -1,6 +1,7 @@
 <h1>Edit Video Game: <?php echo $this->request->data['VideoGame']['title']?></h1>
 
 <?php
+$remove_break_lines = preg_replace('#<br\s*/?>#i', "", $this->request->data['VideoGame']['description']);
 /*
 echo $this->request->data['VideoGame']['title'];
 echo $this->request->data['VideoGame']['price'];
@@ -11,7 +12,7 @@ echo $this->Form->input("id", array("type"=>"hidden"));
 echo $this->Form->input('VideoGame.title');
 echo $this->Form->input('VideoGame.price');
 echo $this->Form->input('VideoGame.main_image_url');
-echo $this->Form->textarea('VideoGame.description', array('rows'=>'5', 'label' =>'description'));
+echo $this->Form->textarea('VideoGame.description', array('rows'=>'5', 'label' =>'description', 'value'=>$remove_break_lines));
 
 $select_platform = null;
 foreach ($platforms as $platform)

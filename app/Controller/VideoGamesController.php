@@ -2,8 +2,10 @@
 class VideoGamesController extends AppController {
 	public $helpers = array("Html", "Form");
 	public $components = array('Session');
-	public $uses = array('Platform', 'VideoGame');
+	public $uses = array('Platform', 'VideoGame', 'User');
 
+	
+	
 	public function index() {
 		$this->set('title_for_layout', 'Video Games');
 		if (isset($_GET['Category']))
@@ -20,6 +22,8 @@ class VideoGamesController extends AppController {
 	
 	
 	public function add() {
+		//  check if someone is logged in, if not redirect to previous page
+		$this->check_user();
 		//  set title for this page
 		$this->set('title_for_layout', 'Add A New Video Game');
 		//  if request is a POST method
@@ -48,6 +52,7 @@ class VideoGamesController extends AppController {
 	}
 	
 	public function edit($id = null) {
+		$this->check_user();
 		if (!$id) {
 			throw new NotFoundException(__('invalid id'));
 		}

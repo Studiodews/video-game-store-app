@@ -31,4 +31,40 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	public $uses = array('User');
+	/*public $components = array(
+        'Session',
+        'Auth' => array(
+            'loginRedirect' => array(
+                'controller' => 'video_games',
+                'action' => 'index'
+            ),
+            'logoutRedirect' => array(
+                'controller' => 'users',
+                'action' => 'login',
+                'home'
+            )
+        )
+    );
+
+    /*public function beforeFilter() {
+        $this->Auth->allow('index', 'view');
+    }*/
+	
+	protected function check_user() {
+		if ($this->Session->check('User.username')) {
+			echo "inside if statement";
+			$admin = $this->User->find('first', array('conditions'=>array('User.username'=>$this->Session->read('User.username'))));
+			if($admin['User']['user_type'] != 'admin') {
+			   $this->Session->setFlash(__('only administrators can add/edit/delete items'));
+				return $this->redirect($this->referer(array('action'=>'index'), true));
+			}
+		}
+		else {
+			$this->Session->setFlash(__('only administrators can add/edit/delete items'));
+			return $this->redirect($this->referer());
+		}
+	}
+
+
 }

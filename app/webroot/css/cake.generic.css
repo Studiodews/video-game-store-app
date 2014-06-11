@@ -26,7 +26,7 @@ body {
 	background: 	#FFFFFF;
 	color: #fff;
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
-	font-size:90%;
+	font-size:1.24em;
 	margin: 0;
 }
 
@@ -70,9 +70,10 @@ h4 {
 	color: #993;
 	font-weight: normal;
 }
+/*
 ul, li {
 	margin: 0 12px;
-}
+}*/
 p {
 	margin: 0 0 1em 0;
 }
@@ -760,11 +761,237 @@ div#console-nav-bar{
 
 div#console-nav-bar a{
 	margin-left: 10px;
-	font-size: 2em;
+	font-size: 1.32em;
 }
 
-div.video_game_row, div.consoles_row {
+div.consoles_row {
 	width: 100%;
 	display: inline-block;
 	padding-top: 10px;
+	border: solid 1px red;
+}
+ul.video_game_row {
+	display: block;
+	list-style: none outside none;
+	
+}
+ul.video_game_row > li {
+	position: relative;
+	margin-left: 0.42857143%;
+	margin-right: 0.42857143%;
+	min-width: 200px;
+	float: left;
+	
+	min-height: 340px;
+	display: inline;
+	
+}
+ul.video_game_row li span.game_title {
+	
+	display:inline-block;
+	max-width: 150px;
+}
+ul.video_game_row li img.img-responsive {
+	max-width:100%;
+	height: auto;
+}
+
+/******************START: NAVIGATION BAR STYLE********************/
+/*********************************************************/
+/*********************************************************/
+#container > #header > div.username {
+	display:block;
+	color:black;
+	float:right;
+}
+
+#nav_bar {
+margin:0px;
+padding:5px;
+width:100%;
+max-width:100%;
+display: inline-block;
+
+
+}
+
+#nav_bar div.menu_screen {
+	color: black;
+	display:none;
+}
+#nav_bar div.left {
+float: left;
+display: inline-block;
+}
+#nav_bar div.right {
+	float: right;
+	display: inline-block;
+	
+}
+
+#nav_bar a {
+	
+	text-decoration:none;
+	font-size:1.23em;
+	border-right: solid 2px #656565;
+	/*box-shadow: 0.1em 0.05em 0.1em #080000 ;
+	-o-box-shadow: 0.1em 0.05em 0.1em #080000;
+	-webkit-box-shadow: 0.1em 0.05em 0.1em #080000;
+	-moz-box-shadow: 0.1em 0.05em 0.1em #080000;
+	*/
+	background: linear-gradient(to bottom, #989898 , #707070);
+	background: -webkit-linear-gradient(top, #989898 , #707070);
+	background: -moz-linear-gradient(top, #989898 , #707070);
+	background: -o-linear-gradient(top, #989898 , #707070);
+	padding:5px;
+}
+
+#nav_bar a.right {
+	border: none;
+	border-top-right-radius: 0.7em;
+	border-bottom-right-radius: 0.7em;
+	/*-webkit-border-top-right-radius: 0.34em;
+	-moz-border-top-right-radius: 0.34em;
+	*
+	border-bottom-right-radius: 0.34em;
+	/*-webkit-border-bottom-right-radius: 0.34em;
+	-moz-border-bottom-right-radius: 0.34em;
+*/
+}
+
+#nav_bar a.left {
+	
+	border-top-left-radius: 0.7em;
+	border-bottom-left-radius: 0.7em;
+	/*-webkit-border-top-right-radius: 0.34em;
+	-moz-border-top-right-radius: 0.34em;
+	*
+	border-bottom-right-radius: 0.34em;
+	/*-webkit-border-bottom-right-radius: 0.34em;
+	-moz-border-bottom-right-radius: 0.34em;
+*/
+}
+
+#nav_bar a:hover {
+	
+	background: linear-gradient(25deg, #531919, 	#754747);
+	background: -webkit-linear-gradient(50deg, #531919, 	#754747);
+	background: -moz-linear-gradient(50deg, #531919, 	#754747);
+	background: -o-linear-gradient(50deg, #531919, 	#754747);
+}
+/******************END: NAVIGATION BAR STYLE********************/
+/*********************************************************/
+/*********************************************************/
+
+/**START: css for three-striped icon menu**/
+/*********************************************************/
+/*********************************************************/
+#three_stripe_menu {
+	width: 2em;
+	height: 2em;
+	display:none;
+}
+
+#three_stripe_menu div {
+	width:  100%;
+	height: 20%;
+	background-color: #000000;
+	position: relative;
+	margin-top:20%;
+	border-radius: 10px;				
+}
+
+#three_stripe_menu div.first {
+	margin:0;
+}
+
+#three_stripe_menu:hover div {
+	opacity: 0.5;
+}
+/**END: css for three-striped icon menu**/
+/*********************************************************/
+/*********************************************************/
+
+
+@media (min-width:650px) and (max-width:900px) {
+	#nav_bar a {
+		font-size: 0.8em;
+	}
+	#nav_bar {
+		display:inline-block;
+	}
+}
+
+/************************************************************************************************
+FOR DEVICES WITH WIDTH less than or equal to 649 pixels
+************************************************************************************************/
+@media (max-width:649px) {
+	/*for small devices, display the three strip menu icon*/
+	#three_stripe_menu {
+		display: block;
+	}
+
+	/*increate the font on video game titles and decrease their min width and height*/
+	ul.video_game_row > li {
+		/*set margin between items*/
+		margin-left: 3%;
+		margin-right: 3%;	
+		font-size: 0.8em;
+		min-width:104px;
+		min-height: 320px;
+		display: inline-block;
+		
+	}
+	/*have game title occupy */
+	ul.video_game_row li span.game_title {
+		max-width: 100px; /*no percentages or else title goes beyond width if parent li element*/
+		display: inline-block;
+	}
+
+	ul.video_game_row {
+		margin:0;
+		padding: 0;
+		width:100%;
+		
+	}
+
+	ul.video_game_row img {width:100px}
+	
+	#header {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	
+	#nav_bar {
+		padding: 0;
+		width: 100%;
+		display: none;
+		
+	}
+	
+	/*adjustments for the navigation buttons */
+	#nav_bar a {
+		border: none;
+		display: block;
+		text-align:center;
+		font-size: 0.8em;
+		height: 2em;
+	}
+	#nav_bar div.right, #nav_bar div.left {
+		float: left;
+		display:block;
+		
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	
+	#nav_bar a.left, #nav_bar a.right {
+	border: none;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	}
 }

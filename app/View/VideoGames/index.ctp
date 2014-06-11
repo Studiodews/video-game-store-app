@@ -7,29 +7,29 @@ echo $this->Html->css(array('video_game_index'));
 	<?php foreach ($platforms as $platform): ?>
 		<a href='?Category=<?php echo $platform['Platform']['id']; ?>'><?php echo $platform['Platform']['name']; ?></a>
 	<?php endforeach; ?>
-	
-
 </div>
 
 <br />
 
 		
-	<div class="video_game_row">
+	<ul class="video_game_row">
 	<?php
 	$counter = 0;
 	foreach ($video_games as $video_game):
-	if ($counter % 6 == 0)
+	/*if ($counter == 5)
 	{
-		echo "</div><div class='video_game_row'>";
+		echo "</ul><ul class='video_game_row'>";
+		$counter = 0;
 		
 	}
-	$counter += 1;
+	$counter += 1;*/
 	?>
-	<div class="vg-items" style="float:left; width: 200px;margin-left:10px; vertical-align:bottom">
-		<div><?php echo $this->Html->image($video_game['VideoGame']['main_image_url']); ?></div>
-	<span><?php echo $this->Html->link($video_game['VideoGame']['title'], array('action' => 'view/'.$video_game['VideoGame']['id'])); ?></span><br />
-	<span>Price: <?php echo $video_game['VideoGame']['price']; ?></span>
-	</div>
+	<li>
+	
+			<?php echo $this->Html->image($video_game['VideoGame']['main_image_url'], array("class"=>"img-responsive")); ?>
+		<br />
+		<span class="game_title"><?php echo $this->Html->link($video_game['VideoGame']['title'], array('action' => 'view/'.$video_game['VideoGame']['id'])); ?></span><br />
+		<span>Price: <?php echo $video_game['VideoGame']['price']; ?></span>
+	</li>
 	<?php endforeach; ?>
-	</tr>
-</table>
+	</ul>
