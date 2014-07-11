@@ -4,7 +4,7 @@
 echo $this->Form->create('VideoGame', array('action' => 'add'));
 echo $this->Form->input('VideoGame.title');
 echo $this->Form->input('VideoGame.price');
-echo $this->Form->input('VideoGame.main_image_url');
+echo $this->Form->input('VideoGame.main_image_url', array('type'=>'file'));
 echo $this->Form->textarea('VideoGame.description', array('rows'=>'5', 'label' =>'description'));
 
 $select_platform = null;
@@ -19,7 +19,7 @@ echo $this->Form->input(
     array('options' => $select_platform)
 );
 
-echo $this->Form->end('Save Game');
+echo $this->Form->end('Add Game');
 
 
 

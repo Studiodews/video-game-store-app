@@ -12,17 +12,11 @@ echo $this->Html->css(array('video_game_index'));
 <br />
 
 		
-	<ul class="video_game_row">
+	<ul class="item_row">
 	<?php
 	$counter = 0;
 	foreach ($video_games as $video_game):
-	/*if ($counter == 5)
-	{
-		echo "</ul><ul class='video_game_row'>";
-		$counter = 0;
-		
-	}
-	$counter += 1;*/
+
 	?>
 	<li>
 	

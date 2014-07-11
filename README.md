@@ -10,7 +10,10 @@ I will explain what the store is about later.
 
 I do not own all the images that I use for the items.
 
-
+need to add a cart controller that will store items in a session
+need to add an orderitem controller for each of consoles, trading card games, and video games that has the id of the order, the id of the item, the type of item(consoles, trading card games, video games), and the quantity
+the cart controller will save the id of the item, the name of the item, the type of item, and the quantity in the session
+the shop controller will allow for users to submit their order
 
 CakePHP
 =======

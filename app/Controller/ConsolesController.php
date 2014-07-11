@@ -32,5 +32,17 @@ class ConsolesController extends AppController {
 		}
 		$this->set('platforms', $this->Platform->find('all'));
 	}
+
+	public function view($id = null) {
+		if (!$id) {
+			$this->Session->setFlash(__('this item does not exist'));
+			$this->redirect(array('action'=>'index'));
+		}
+		else {
+			$item = $this->Console->findById($id);
+			$this->set('item', $item);
+		}
+
+	}
 }
 ?>

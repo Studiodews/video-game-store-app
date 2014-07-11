@@ -6,6 +6,7 @@ class PlatformsController extends AppController {
 	
 	public function index()
 	 {
+	 	
 		$this->set('platforms', $this->Platform->find("all"));
 	 }
 }

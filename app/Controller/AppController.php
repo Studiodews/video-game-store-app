@@ -53,7 +53,7 @@ class AppController extends Controller {
 	
 	protected function check_user() {
 		if ($this->Session->check('User.username')) {
-			echo "inside if statement";
+			//echo "inside if statement";
 			$admin = $this->User->find('first', array('conditions'=>array('User.username'=>$this->Session->read('User.username'))));
 			if($admin['User']['user_type'] != 'admin') {
 			   $this->Session->setFlash(__('only administrators can add/edit/delete items'));

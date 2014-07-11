@@ -1,9 +1,11 @@
 <?php
+
+	$remove_break_lines = preg_replace('#<br\s*/?>#i', "", $this->request->data['TradingCardGame']['description']);
 	echo $this->Form->create('TradingCardGame', array('type'=>'file'));
 	echo $this->Form->input('TradingCardGame.name');
 	echo $this->Form->input('TradingCardGame.price');
 	echo $this->Form->input('TradingCardGame.main_image_url', array('type'=>'file'));
-	echo $this->Form->input('TradingCardGame.description', array('rows' => 3));
+	echo $this->Form->input('TradingCardGame.description', array('rows'=>'5', 'label' =>'description', 'value'=>$remove_break_lines));
 	$tcg_brand = null;
 	foreach ($tcg_brands as $brand)
 	{
@@ -16,6 +18,6 @@
 		array('options' => $tcg_brand)
 	);
 	
-	echo $this->form->end('ADD CARD(S)');
+	echo $this->form->end('Save Item');
 
 ?>

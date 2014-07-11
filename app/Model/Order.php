@@ -1,0 +1,21 @@
+<?php
+class Order extends AppModel {
+	/*
+	TODO
+	orders database table:
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	user_id INT UNSIGNED
+	address varchar(100)
+	city varchar(15)
+	state varchar(15)
+	country varchar(15)
+	credit_card INT
+	credit_card_code INT
+	total DECIMAL(8,2)
+	created DATETIME
+	*/
+	public $hasMany = array('VgOrderItem');
+
+	public $belongsTo = array('User');
+}
+?>

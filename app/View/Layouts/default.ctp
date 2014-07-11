@@ -18,6 +18,7 @@
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
+		echo $this->Html->script("jquery-2.1.1.min");
 	?>
 	
 	<script type="text/javascript">
@@ -25,19 +26,36 @@
 		//  this function returns a function that shows 
 		//  the menu when icon is clicked or hides it depending on visibility
 		function show_menu() {
-			var navigation = document.getElementById('nav_bar');
+			//var navigation = document.getElementById('nav_bar');
+			
 			var hidden = true;
 			return function() {
+				console.log("clicked");
 				if (hidden) {
-					navigation.style.display = "inline-block";
+					$("#nav_bar").css("display", "inline-block");
+					//navigation.style.display = "inline-block";
 					hidden = false;
 				}
 				else {
-					navigation.style.display = "none";
+					//navigation.style.display = "none";
+					$("#nav_bar").css("display", "none");
 					hidden = true;
 				}
 			}
 		}
+
+		// when window resizes make sure to show navigation bar in case it was hidden
+		$(window).resize(function() {
+			//var navigation = document.getElementById('nav_bar');
+			if($(window).width() >= 650) {
+				$("#nav_bar").css("display", "inline-block");
+				//navigation.style.display = "inline-block";
+			}
+			else {
+				$("#nav_bar").css("display", "none");
+				//navigation.style.display = "none";
+			}
+		});
 
 		var menu_function = show_menu();  //  get instance of function above
 		var el = document.getElementById("three_stripe_menu");
@@ -56,7 +74,7 @@
 		<div id="header">
 			<!--<div id="logo"><?php echo $this->Html->image('logo.png'); ?></div>
 			-->
-			
+			<h1>Game Geek</h1>
 			<div class='username'><?php echo $this->Session->read('User.username')?></div>
 			<div id="three_stripe_menu">
 				<div class="first_line"></div>

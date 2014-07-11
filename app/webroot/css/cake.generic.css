@@ -24,7 +24,7 @@
 /** General Style Info **/
 body {
 	background: 	#FFFFFF;
-	color: #fff;
+	color: black;
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
 	font-size:1.24em;
 	margin: 0;
@@ -84,12 +84,15 @@ p {
 }
 
 #header{
-	padding: 10px 20px;
+	padding: 10px 10px;
+	
+	border-bottom:1px solid #ccc;
+    
 }
 #header h1 {
 	line-height:20px;
 	/*background: #003d4c url('../img/cake.icon.png') no-repeat left;*/
-	color: #fff;
+	color: black;
 	padding: 0px 30px;
 
 }
@@ -110,7 +113,7 @@ p {
 	color: #333;
 	padding: 10px 20px 40px 20px;
 	overflow: auto;
-	border: solid 1px black;
+	/*border: solid 1px black;*/
 }
 
 #content h1 {
@@ -755,6 +758,10 @@ pre {
 	display:none;
 }
 
+input.item-quantity{
+	width:0.7em;
+}
+/*******************************************/
 div#console-nav-bar{
 	width:100%;
 }
@@ -770,12 +777,12 @@ div.consoles_row {
 	padding-top: 10px;
 	border: solid 1px red;
 }
-ul.video_game_row {
+ul.item_row {
 	display: block;
 	list-style: none outside none;
 	
 }
-ul.video_game_row > li {
+ul.item_row > li {
 	position: relative;
 	margin-left: 0.42857143%;
 	margin-right: 0.42857143%;
@@ -786,12 +793,12 @@ ul.video_game_row > li {
 	display: inline;
 	
 }
-ul.video_game_row li span.game_title {
+ul.item_row li span.game_title {
 	
 	display:inline-block;
 	max-width: 150px;
 }
-ul.video_game_row li img.img-responsive {
+ul.item_row li img.img-responsive {
 	max-width:100%;
 	height: auto;
 }
@@ -826,6 +833,7 @@ display: inline-block;
 #nav_bar div.right {
 	float: right;
 	display: inline-block;
+	margin-right: 10px;
 	
 }
 
@@ -847,7 +855,7 @@ display: inline-block;
 }
 
 #nav_bar a.right {
-	border: none;
+	border:none;
 	border-top-right-radius: 0.7em;
 	border-bottom-right-radius: 0.7em;
 	/*-webkit-border-top-right-radius: 0.34em;
@@ -912,6 +920,18 @@ display: inline-block;
 /*********************************************************/
 /*********************************************************/
 
+/**START: css for top five video games div container
+***************************************************/
+
+#vg_top_five {
+	width:95%;
+	border-top: solid 1px gray;
+	margin: 0 auto;
+}
+
+
+/**END: css for top five video games div container
+***************************************************/
 
 @media (min-width:650px) and (max-width:900px) {
 	#nav_bar a {
@@ -922,6 +942,18 @@ display: inline-block;
 	}
 }
 
+/********/
+/*START: css for view.ctp*/
+span.item-title {
+	font-size: 2em;
+	vertical-align: top;
+
+}
+div.description {
+	display:block;
+}
+/*END: css for view.ctp*/
+/************/
 /************************************************************************************************
 FOR DEVICES WITH WIDTH less than or equal to 649 pixels
 ************************************************************************************************/
@@ -932,7 +964,7 @@ FOR DEVICES WITH WIDTH less than or equal to 649 pixels
 	}
 
 	/*increate the font on video game titles and decrease their min width and height*/
-	ul.video_game_row > li {
+	ul.item_row > li {
 		/*set margin between items*/
 		margin-left: 3%;
 		margin-right: 3%;	
@@ -943,19 +975,19 @@ FOR DEVICES WITH WIDTH less than or equal to 649 pixels
 		
 	}
 	/*have game title occupy */
-	ul.video_game_row li span.game_title {
+	ul.item_row li span.game_title {
 		max-width: 100px; /*no percentages or else title goes beyond width if parent li element*/
 		display: inline-block;
 	}
 
-	ul.video_game_row {
+	ul.item_row {
 		margin:0;
 		padding: 0;
 		width:100%;
 		
 	}
 
-	ul.video_game_row img {width:100px}
+	ul.item_row img {width:100px}
 	
 	#header {
 		width: 100%;

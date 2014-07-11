@@ -7,7 +7,7 @@
 </div>
 
 <div class="tcg-items">
-	<ul class="video_game_row">
+	<ul class="item_row">
 		<?php
 			foreach($tcg_list as $tcg_item):
 		?>

@@ -10,6 +10,22 @@ echo $this->Html->link('add a console', array('controller' => 'Consoles', 'actio
 
 </div>
 
+<ul class="item_row">
+	<?php
+	$counter = 0;
+	foreach ($consoles as $console):
+
+	?>
+	<li>
+	
+			<?php echo $this->Html->image($console['Console']['main_image_url'], array("class"=>"img-responsive")); ?>
+		<br />
+		<span class="game_title"><?php echo $this->Html->link($console['Console']['name'], array('action' => 'view/'.$console['Console']['id'])); ?></span><br />
+		<span>Price: <?php echo $console['Console']['price']; ?></span>
+	</li>
+	<?php endforeach; ?>
+	</ul>
+<!--
 <div class="consoles_row">
 <?php
 $counter = 0;
@@ -27,4 +43,4 @@ $counter += 1;
 		<span>Price: <?php echo $console['Console']['price']; ?></span>
 	</div>
 <?php endforeach; ?>
-</div>
+</div>-->
