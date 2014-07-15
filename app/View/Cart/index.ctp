@@ -10,6 +10,7 @@
 <?php
 $total = 0;
 foreach($cart_items as $category=>$items):
+	//echo "a category: ".$category;
 	foreach ($items as $id=>$item):
 ?>
 <tr>

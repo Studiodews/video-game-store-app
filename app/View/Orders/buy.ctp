@@ -1,12 +1,12 @@
 <?php
 
-$this->Form->create('Order');
-$this->Form->input('Order.address');
-$this->Form->input('Order.city');
-$this->Form->input('state');
-$this->Form->input('country');
-$this->Form->input('credit_card');
-$this->Form->input('credit_card_code');
-$this->Form->end('Place Order');
+echo $this->Form->create('Order', array('action'=>'buy'));
+echo $this->Form->input('Order.address');
+echo $this->Form->input('Order.city');
+echo $this->Form->input('state');
+echo $this->Form->input('country');
+echo $this->Form->input('credit_card');
+echo $this->Form->input('credit_card_code');
+echo $this->Form->end('Place Order');
 
 ?>

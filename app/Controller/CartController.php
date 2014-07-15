@@ -9,7 +9,7 @@ class CartController extends AppController {
 	public $components = array('Session');
 	public $uses = array('VgOrderItem', 'VideoGame', 'TradingCardGame', 'Console');
 	public function no_items() {
-
+		// dont need this anymore
 	}
 
 	public function index() {
@@ -20,7 +20,8 @@ class CartController extends AppController {
 		//print_r($this->Session->read('Cart.VideoGame.2')); 
 		
 		if (!$this->Session->check('Cart')) {
-			$this->redirect(array('action'=>'no_items'));
+			$this->Session->write('Cart', array());
+			//$this->redirect(array('action'=>'no_items'));
 		}
 		
 		$this->set('cart_items', $this->Session->read('Cart'));

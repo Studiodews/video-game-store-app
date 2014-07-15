@@ -32,6 +32,8 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	public $uses = array('User');
+
+	protected $products = array('VideoGame'=>'VgOrderItem', 'TradingCardGame'=>'TcgOrderItem');
 	/*public $components = array(
         'Session',
         'Auth' => array(

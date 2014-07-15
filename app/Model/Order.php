@@ -16,6 +16,29 @@ class Order extends AppModel {
 	*/
 	public $hasMany = array('VgOrderItem');
 
-	public $belongsTo = array('User');
+	public $validate = array(
+		'address' => array(
+			'rule' => '/^[0-9]+.*[a-zA-Z]+.*$/'
+			),
+		'city' => array(
+			'rule' =>'notEmpty'
+			),
+		'state' => array(
+			'rule' => 'notEmpty'
+			),
+		'country' => array(
+			'rule' => 'notEmpty'
+			),
+		'credit_card' =>array(
+			'rule' => 'numeric'
+			),
+		'credit_card_code' => array(
+			'rule' => 'numeric'
+			),
+		'total' => array(
+			'rule' => array('money', 'left', 'decimal', 2)
+			)
+		);
+	//public $belongsTo = array('User');
 }
 ?>
