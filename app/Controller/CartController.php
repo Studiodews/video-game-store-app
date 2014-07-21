@@ -23,7 +23,12 @@ class CartController extends AppController {
 			$this->Session->write('Cart', array());
 			//$this->redirect(array('action'=>'no_items'));
 		}
-		
+		//print_r(count($this->Session->read('Cart')));
+		//print_r($this->Session->read('Cart'));
+		$this->set('show_checkout', false);
+		if(count($this->Session->read('Cart')) >= 1) {
+			$this->set('show_checkout', true);
+		}
 		$this->set('cart_items', $this->Session->read('Cart'));
 	}
 
@@ -44,7 +49,7 @@ class CartController extends AppController {
 			$this->Session->write($cart_session_name.'.quantity',$quantity);
 			$this->Session->write($cart_session_name.'.name', $item['name']);
 			$this->Session->write($cart_session_name.'.price', $item['price']);
-			print_r($this->Session->read('Cart'));	
+			//print_r($this->Session->read('Cart'));	
 
 			$this->redirect(array('action' => 'index'));
 		}
@@ -56,6 +61,11 @@ class CartController extends AppController {
 			$data = $this->request->data;
 			//print_r($this->Session->read('Cart'.$data['prodtype'].$data['id']));
 			$this->Session->delete('Cart.' . $data['prodtype'].'.'.$data['id']);
+
+			//  if no more items exist in this category, then delete the category from cart
+			if(count($this->Session->read('Cart.'.$data['prodtype'])) == 0) {
+				$this->Session->delete('Cart.'.$data['prodtype']);
+			}
 			//$this->Session->setFlash(__($data['prodtype'].', '.$data['id'].' '.$this->Session->read('Cart'.$data['prodtype'].$data['id'])));
 		}
 		$this->redirect(array('action'=>'index'));

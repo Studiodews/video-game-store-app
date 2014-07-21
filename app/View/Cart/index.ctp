@@ -36,4 +36,10 @@ endforeach; ?>
 </tr>
 </tbody>
 </table>
+<?php
+	if($show_checkout) {
+		echo $this->Form->create('Order', array('action'=>'buy'));
+		echo $this->Form->end('Checkout');
+	}
+?>
 </section>
