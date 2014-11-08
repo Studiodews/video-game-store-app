@@ -18,6 +18,9 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+define("SITE_URL", "/game-store/");
+define("API_LOGIN_ID", '467w2QbtZ8N');
+define("TRANSACTION_KEY", '684jAnrPPL323J4v');
 
 App::uses('Controller', 'Controller');
 
@@ -32,8 +35,9 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	public $uses = array('User');
-
+        public $components = array('Session', 'RequestHandler');
 	protected $products = array('VideoGame'=>'VgOrderItem', 'TradingCardGame'=>'TcgOrderItem');
+	protected $order_items = array('VgOrderItem', 'TcgOrderItem');
 	/*public $components = array(
         'Session',
         'Auth' => array(
@@ -53,20 +57,29 @@ class AppController extends Controller {
         $this->Auth->allow('index', 'view');
     }*/
 	
-	protected function check_user() {
-		if ($this->Session->check('User.username')) {
-			//echo "inside if statement";
-			$admin = $this->User->find('first', array('conditions'=>array('User.username'=>$this->Session->read('User.username'))));
-			if($admin['User']['user_type'] != 'admin') {
-			   $this->Session->setFlash(__('only administrators can add/edit/delete items'));
-				return $this->redirect($this->referer(array('action'=>'index'), true));
-			}
-		}
-		else {
-			$this->Session->setFlash(__('only administrators can add/edit/delete items'));
-			return $this->redirect($this->referer());
-		}
-	}
+        // returns true if a user is logged in and is valid
+	protected function check_user($check_admin=true) {
+         
+            if ($this->Session->check('User.username')) {
 
+                $admin = $this->User->find('first', 
+                        array('conditions'=>array('User.username'=>$this->Session->read('User.username'))));
+                //if username not valid
+                if(count($admin) <= 0) {
+                    echo "count zero";
+                    return false;
+                }
+                //  if its an admin
+                if ($check_admin && $admin['User']['user_type'] != 'admin') {
+
+                    return false;
+                }
+                return true;
+            }
+            else {
+                return false;
+            }
+            return true;
+	}
 
 }

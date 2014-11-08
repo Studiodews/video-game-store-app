@@ -6,7 +6,13 @@ class VgReview extends AppModel {
 	/*public $belongsTo = array(
 		'VideoGame' => array('className' => 'VideoGame', 'foreignKey' => 'video_game_id')
 	);*/
-
+	//public $actAs = array('Containable');
+	public $belongsTo = array(
+		'User' =>array(
+			'className'=>'User',
+			'foreignKey'=>'user_id'
+			)
+		);
 	public $validate = array(
 		'comment' => array(
 			'exists_rule'=>array(

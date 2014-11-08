@@ -1,0 +1,86 @@
+/************************************************************************************************
+START: FOR DEVICES WITH WIDTH less than or equal to 649 pixels
+************************************************************************************************/
+@media (max-width:649px) {
+	div.checkbox {
+		width:100%;
+	}
+	/*for small devices, display the three strip menu icon*/
+	#three_stripe_menu {
+		display: block;
+	}
+
+	/*create the font on video game titles and decrease their min width and height*/
+	ul.item_row > li {
+		/*set margin between items*/
+		margin-left: 3%;
+		margin-right: 3%;	
+		/*font-size: 0.8em;*/
+		min-width:104px;
+		min-height: 200px; /*the width of the item(includes image, title, and price)*/
+		display: inline-block;
+		
+	}
+	/*have game title occupy */
+	ul.item_row li span.game_title {
+		max-width: 100px; /*no percentages or else title goes beyond width if parent li element*/
+		display: inline-block;
+		font-size:0.8em;
+	}
+
+	ul.item_row {
+		margin:0;
+		padding: 0;
+		width:100%;
+		font-size:0.76em;
+		
+	}
+
+	ul.item_row img {width:100px}
+	
+	#header {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	
+	#nav_bar {
+		padding: 0;
+		width: 100%;
+		display: none;
+		
+	}
+	
+	/*adjustments for the navigation buttons */
+	#nav_bar a {
+		border: none;
+		display: block;
+		text-align:center;
+		font-size: 0.8em;
+		height: 2em;
+	}
+	#nav_bar div.right, #nav_bar div.left {
+		float: left;
+		display:block;
+		
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	
+	#nav_bar a.left, #nav_bar a.right {
+	border: none;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	}
+
+	.checkbox {
+		width:100%;
+	}
+
+	#VideoGameKeywords {
+		width: 100%;
+	}
+}

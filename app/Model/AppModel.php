@@ -20,7 +20,8 @@
  */
 
 App::uses('Model', 'Model');
-
+App::import('Model', 'SessionComponent');
+//$session = new CakeSession();
 /**
  * Application model for Cake.
  *
@@ -30,5 +31,6 @@ App::uses('Model', 'Model');
  * @package       app.Model
  */
 class AppModel extends Model {
-	var $actAs = array('Containable');
+    
+	public $actsAs = array('Containable');
 }

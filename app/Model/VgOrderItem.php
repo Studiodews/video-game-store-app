@@ -5,12 +5,17 @@ class VgOrderItem extends AppModel {
 	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT
 	quantity INT
 	product_id INT UNSGINED REFERNCES video_games(id)
-	order_id INT UNSIGNED REFERENCES orders(id) //TODO: need to add this
+	order_id INT UNSIGNED REFERENCES orders(id)
 
 	*/
-	
-	public $belongsTo = array('Order',
-		'OrderVideoGame' =>array(
+
+	//public $actsAs = array('Containable');
+	public $belongsTo = array(
+		/*'Order' => array(
+			'className'=>'Order',
+			'foreignKey' => 'order_id'
+			),*/
+		'VideoGame' =>array(
 			'className' => 'VideoGame',
 			'foreignKey' => 'product_id'
 			)

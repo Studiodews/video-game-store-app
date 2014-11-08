@@ -61,3 +61,10 @@ create table if not exists console_images(
 	console_id id INT UNSIGNED REFERENCES consoles(id),
 	image_url VARCHAR(100)
 );
+
+create table if not exists order_items(
+    order_id INT UNSGINED REFERENCES orders(id),
+    product_id INT UNSIGNED REFERENCES products(id),
+    cost DECIMAL(8,2),
+    quantity INT
+)

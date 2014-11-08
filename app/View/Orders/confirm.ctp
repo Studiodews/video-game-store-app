@@ -19,9 +19,11 @@
 		<td>Quantity</td>
 		<td>Price(each)</td>
 	</thead>
-<?php foreach($cart_items as $category=>$items):
+<?php 
+//print_r($cart_items);
+foreach($cart_items as $category=>$item):
 	//echo "a category: ".$category;
-	foreach ($items as $id=>$item):
+	//foreach ($items as $id=>$item):
 ?>
 <tr>
 	<td><?php echo $item['name']; ?></td>
@@ -29,7 +31,7 @@
 	<td><?php echo $item['price'] ?></td>
 </tr>
 <?php 
-endforeach;
+//endforeach;
 endforeach; ?>
 <tr>
 	<td colspan='2' style="text-align:right">total</td>

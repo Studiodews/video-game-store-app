@@ -1,4 +1,5 @@
 <?php
+//print_r($consoles);
 echo $this->Html->link('add a console', array('controller' => 'Consoles', 'action' => 'add'));
 ?>
 
@@ -18,10 +19,10 @@ echo $this->Html->link('add a console', array('controller' => 'Consoles', 'actio
 	?>
 	<li>
 	
-			<?php echo $this->Html->image($console['Console']['main_image_url'], array("class"=>"img-responsive")); ?>
+			<?php echo $this->Html->image($console['Product']['main_image_url'], array("class"=>"img-responsive")); ?>
 		<br />
-		<span class="game_title"><?php echo $this->Html->link($console['Console']['name'], array('action' => 'view/'.$console['Console']['id'])); ?></span><br />
-		<span>Price: <?php echo $console['Console']['price']; ?></span>
+		<span class="game_title"><?php echo $this->Html->link($console['Product']['name'], array('action' => 'view/'.$console['Console']['id'])); ?></span><br />
+		<span>Price: <?php echo $console['Product']['price']; ?></span>
 	</li>
 	<?php endforeach; ?>
 	</ul>

@@ -14,7 +14,16 @@ class Order extends AppModel {
 	total DECIMAL(8,2)
 	created DATETIME
 	*/
-	public $hasMany = array('VgOrderItem', 'TcgOrderItem');
+
+	//public $actsAs = array('Containable');
+	public $hasMany = array(
+		
+            'OrderItem'=>array(
+                'className'=>'OrderItem',
+                'foreignKey'=>'order_id'
+            ),
+
+	);
 
 	public $validate = array(
 		'address' => array(

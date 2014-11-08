@@ -11,19 +11,5 @@
 	</p>
 </div>
 
-<div id="vg_top_five">
-	<p>Our Top Five Popular Video Games</p>
-<ul class="item_row">
-	<?php
-	foreach ($video_games as $video_game):
-	?>
-	<li>
-	
-			<?php echo $this->Html->image($video_game['VideoGame']['main_image_url'], array("class"=>"img-responsive")); ?>
-		<br />
-		<span class="game_title"><?php echo $this->Html->link($video_game['VideoGame']['title'], array('controller'=>'video_games', 'action' => 'view/'.$video_game['VideoGame']['id'])); ?></span><br />
-		<span>Price: <?php echo $video_game['VideoGame']['price']; ?></span>
-	</li>
-	<?php endforeach; ?>
-	</ul>
+
 </div>
