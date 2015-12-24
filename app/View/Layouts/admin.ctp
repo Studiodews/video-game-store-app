@@ -23,10 +23,15 @@
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
+		;//echo $this->Html->script("jquery-2.1.1.min");
+		//echo $this->Html->script("admin");
 		echo $this->Html->script("jquery-2.1.1.min");
 		echo $this->Html->script('ckeditor/ckeditor.js');
 		echo $this->Html->script('chosen/chosen.jquery.min.js');
-                echo $this->Html->script('jquery-ui-1.11.1.custom/jquery-ui.min.js');
+		echo $this->Html->script('handlebars');
+		echo $this->Html->script('underscore-min');
+		echo $this->Html->script('backbone-min');
+                //echo $this->Html->script('jquery-ui-1.11.1.custom/jquery-ui.min.js');
 	?>
 	
 </head>

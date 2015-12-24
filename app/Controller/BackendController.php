@@ -72,12 +72,14 @@ public $layout = 'admin';
 
 	public function vg_genre_index() {
 		$save_edit_url= Router::url(array('controller'=>'vg_genres', 'action'=>'save_genre'));
+		$delete_genre_url = Router::url(array('controller'=>'vg_genres', 'action'=>'delete_genre'));
 		$this->Paginator->settings = array('order'=>array('id'=>'DESC'), 'limit'=>20, 'offset'=>0);
 		$genres = $this->Paginator->paginate('VgGenre');
 		$this->set('vg_genres', $genres);
 		//print_r($genres);
 		//$this->set('vg_genres', $this->VgGenre->find('all', array('order'=>array('id'=>'DESC'))));
 		$this->set('save_edit_url',$save_edit_url);
+		$this->set('delete_genre_url',$delete_genre_url);
 	}
 }
 

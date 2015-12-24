@@ -39,6 +39,7 @@ if (!defined('ROOT')) {
 	define('ROOT', dirname(dirname(dirname(__FILE__))));
 }
 
+
 /**
  * The actual directory name for the "app".
  *

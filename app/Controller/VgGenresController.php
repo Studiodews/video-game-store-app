@@ -47,6 +47,21 @@ class VgGenresController extends AppController {
 		//print_r($this->request->data);
 		echo json_encode($response);
 	}
+
+
+    public function delete_genre() {
+        Configure::write('debug', 0);
+        $this->RequestHandler->setContent('json');
+        $data = [];
+        $data['success'] = false;
+        $this->autoRender = false;
+        $id = $this->request->data('VgGenre.id');
+        //$id = $this->request->data['VgGenre']['id'];
+        $this->VgGenre->delete($id);
+        $data['success']  = true;
+        echo json_encode($data);
+        exit();
+    }   
 }
 
 ?>

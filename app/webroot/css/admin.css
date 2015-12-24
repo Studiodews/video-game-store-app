@@ -1241,6 +1241,18 @@ border-width: 10px;
 	background-color: #DB4D4D;
 }
 
+.one-line-form .input-form[type="text"] {
+	border:none;
+	border-bottom: solid #FFFF66 2px;
+}
+
+.one-line-form .input-form[type="text"]:focus {
+	/*border:none;*/
+	outline: none;
+	border-bottom: solid #CCCC52 2px;
+	/*background-color: 		#FFFFF0;*/
+}
+
 form.new-item-one-line-form {
 margin-left: 82px;
 }
