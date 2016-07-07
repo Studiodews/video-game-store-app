@@ -46,24 +46,24 @@ create table if not exists consoles (
 
 create table if not exists vg_images(
 	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	video_game_id id INT UNSIGNED REFERENCES video_games(id),
+	video_game_id INT UNSIGNED REFERENCES video_games(id),
 	image_url VARCHAR(100)
 );
 
 create table if not exists tcg_images(
 	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	tcg_game_id id INT UNSIGNED REFERENCES tcg_games(id),
+	tcg_game_id INT UNSIGNED REFERENCES tcg_games(id),
 	image_url VARCHAR(100)
 );
 
 create table if not exists console_images(
 	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	console_id id INT UNSIGNED REFERENCES consoles(id),
+	console_id INT UNSIGNED REFERENCES consoles(id),
 	image_url VARCHAR(100)
 );
 
 create table if not exists order_items(
-    order_id INT UNSGINED REFERENCES orders(id),
+    order_id INT UNSIGNED REFERENCES orders(id),
     product_id INT UNSIGNED REFERENCES products(id),
     cost DECIMAL(8,2),
     quantity INT

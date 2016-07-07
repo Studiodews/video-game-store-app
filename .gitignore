@@ -20,3 +20,9 @@ Icon?
 ehthumbs.db
 Thumbs.db
 /nbproject/private/
+
+
+.project
+.settings/
+.buildpath
+video-game-db.sql
